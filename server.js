@@ -56,9 +56,7 @@ app.get('/getDreams', function(request, response) {
 });
 
 app.get('/hoge/:id', function(request, response) {
-  db.all('SELECT * from Dreams', function(err, rows) {
-    response.send(JSON.stringify(rows));
-  });
+  db.run('INSERT INTO Dreams (dream) VALUES ("'+request.params.id+'")');
 });
 
 // listen for requests :)
