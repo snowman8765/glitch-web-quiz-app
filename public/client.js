@@ -43,6 +43,9 @@
     // get dream value and add it to the list
     dreams.push(dreamInput.value);
     appendNewDream(dreamInput.value);
+    
+    dreamRequest.open('get', '/hoge/'+dreamInput.value);
+    dreamRequest.send();
   
     // reset form 
     dreamInput.value = '';

@@ -55,6 +55,12 @@ app.get('/getDreams', function(request, response) {
   });
 });
 
+app.get('/hoge/:id', function(request, response) {
+  db.all('SELECT * from Dreams', function(err, rows) {
+    response.send(JSON.stringify(rows));
+  });
+});
+
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
