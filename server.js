@@ -6,6 +6,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
+var Gun = require( "gun/gun" );
+require( 'gun-file' );
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -63,3 +65,55 @@ app.get('/hoge/:id', function(request, response) {
 var listener = app.listen(process.env.PORT, function () {
   console.log('Your app is listening on port ' + listener.address().port);
 });
+
+ var gun = new Gun({
+   'file-name' : '.data/yourData.json',  // default is 'data.json6'
+   //'file-mode' : 666, // default is 0666
+   'file-pretty' : true, // default, if false, will write ugly/compressed json
+   'file-delay' : 100,  // default. control flush interval/delay default.
+ });
+
+gun = new Gun();
+
+
+
+var cat = {name: "Fluffy", species: "kitty"};
+var mark = {boss: cat};
+cat.slave = mark;
+ 
+// partial updates merge with existing data!
+gun.get('mark').put(mark);
+ 
+// access the data as if it is a document.
+gun.get('mark').get('boss').get('name').val(function(data, key){
+  // `val` grabs the data once, no subscriptions.
+  console.log("Mark's boss is", data);
+});
+ 
+// traverse a graph of circular references!
+gun.get('mark').get('boss').get('slave').once(function(data, key){
+  console.log("Mark is the slave!", data);
+});
+ 
+// add both of them to a table!
+gun.get('list').set(gun.get('mark').get('boss'));
+gun.get('list').set(gun.get('mark'));
+ 
+// grab each item once from the table, continuously:
+gun.get('list').map().once(function(data, key){
+  console.log("Item:", data);
+});
+ 
+// live update the table!
+gun.get('list').set({type: "cucumber", goal: "scare cat"});
+
+
+
+
+
+var cat2 = {name: "Fluffy", species: "kitty"};
+var mark2 = {boss: cat};
+cat2.slave = mark;
+ 
+// partial updates merge with existing data!
+gun.get('mark2').put(mark2);

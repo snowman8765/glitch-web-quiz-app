@@ -1,5 +1,7 @@
 dependencies:
   express: 4.16.3
+  gun: 0.9.9991
+  gun-file: 1.0.123
   sqlite3: 4.0.0
 packages:
   /accepts/1.3.5:
@@ -15,6 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /async-limiter/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==
   /body-parser/1.18.2:
     dependencies:
       bytes: 3.0.0
@@ -165,6 +171,21 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
+  /gun-file/1.0.123:
+    dependencies:
+      gun: 0.9.9991
+      json-6: 0.1.128
+    dev: false
+    resolution:
+      integrity: sha512-Vs5AdPhv5WldcRCbYg9/Lydx0qgx4No3i5YRXu0L3Hw+Y49mVqNqauHzpbQTO2hjQ+Cii6YjaYVBfDYXsdlA0g==
+  /gun/0.9.9991:
+    dependencies:
+      ws: 5.2.0
+    dev: false
+    engines:
+      node: '>=0.8.4'
+    resolution:
+      integrity: sha512-IMxh6of3ZucOaYDmUDagSx9tYkH3YrEl1oD0RAMAsG9l/B2tJ4WfLhhelR3pmxCq0237XbuNeY7vB9ZsqfAQ3g==
   /http-errors/1.6.2:
     dependencies:
       depd: 1.1.1
@@ -192,6 +213,11 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-4/o1e3c9phnybpXwSdBVxyeW+Gs=
+  /json-6/0.1.128:
+    deprecated: fix error reading surrogate pair characters and long buffers.
+    dev: false
+    resolution:
+      integrity: sha512-drsXxm2Z5DnjgtH80fy6qMfNPQMpaK4blHBcWlHFLiaz/NKfRFSuvhLoJGzZuo64B/t8Nx1stNzCTUzrmKz+dw==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -375,9 +401,17 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+  /ws/5.2.0:
+    dependencies:
+      async-limiter: 1.0.0
+    dev: false
+    resolution:
+      integrity: sha512-c18dMeW+PEQdDFzkhDsnBAlS4Z8KGStBQQUcQ5mf7Nf689jyGk0594L+i9RaQuf4gog6SvWLJorz2NfSaqxZ7w==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 7
 shrinkwrapVersion: 3
 specifiers:
   express: ^4.16.3
+  gun: ^0.9.9991
+  gun-file: ^1.0.121
   sqlite3: ^4.0.0

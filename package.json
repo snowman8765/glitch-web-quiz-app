@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "sqlite3": "^4.0.0"
+    "sqlite3": "^4.0.0",
+    "gun-file": "^1.0.121",
+    "gun": "^0.9.9991"
   },
   "engines": {
     "node": "8.x"

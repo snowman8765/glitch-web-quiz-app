@@ -44,8 +44,23 @@
     dreams.push(dreamInput.value);
     appendNewDream(dreamInput.value);
     
+    // 送信
     dreamRequest.open('get', '/hoge/'+dreamInput.value);
     dreamRequest.send();
+    
+    // 
+    // var Gun = require('gun'); // in NodeJS
+    // var Gun = require('gun/gun'); // in React
+    var gun = Gun();
+
+    gun.get('mark').put({
+      name: "Mark",
+      email: "mark@gunDB.io",
+    });
+
+    gun.get('mark').on(function(data, key){
+      console.log("update:", data);
+    });
   
     // reset form 
     dreamInput.value = '';
