@@ -54,7 +54,7 @@
     // var Gun = require('gun'); // in NodeJS
     // var Gun = require('gun/gun'); // in React
     //var gun = Gun();
-    var gun = Gun().get('thoughts');
+    var gun = Gun({file: 'data.json'});
 
     gun.get('mark').put({
       name: "Mark",

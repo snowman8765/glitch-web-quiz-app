@@ -68,7 +68,9 @@ var listener = app.listen(process.env.PORT, function () {
 
 var Gun = require( "gun" );
 
-var gun = new Gun().get('thoughts');
+var gun = Gun({
+  file: 'public/data.json'
+});
 
 
 //require( 'gun-file' );
