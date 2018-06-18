@@ -47,6 +47,12 @@
     // 送信
     dreamRequest.open('get', '/hoge/'+dreamInput.value);
     dreamRequest.send();
+    
+    var Gun = require('gun');
+    var gun = Gun({file: 'data.json'});
+    gun.get('mark').on(function(data, key){
+      console.log("update:", data);
+    });
   
     // reset form 
     dreamInput.value = '';
