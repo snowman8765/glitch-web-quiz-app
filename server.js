@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+var Gun = require("gun");
+app.use(Gun.serve);
+
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
@@ -66,14 +69,11 @@ var listener = app.listen(process.env.PORT, function () {
 
 
 
-var Gun = require( "gun" );
 
-var gun = Gun({
-  file: 'public/data.json'
-});
-var server = require('http').createServer().listen(8080);
-var gun = Gun({web: server});
-
+var port    = process.env.OPENSHIFT_NODEJS_PORT || process.env.VCAP_APP_PORT || process.env.PORT || process.argv[2] || 8080;
+var server = app.listen(port);
+var gun = Gun({ file: 'data.json', web: server });
+console.log('Server started on port ' + port + ' with /gun');
 
 //require( 'gun-file' );
 //var gun = new Gun({
