@@ -5,6 +5,15 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+
+// listen for requests :)
+console.log('Your app is listening on port ' + process.env.PORT);
+exit(0);
+var listener = app.listen(process.env.PORT, function () {
+  //console.log('Your app is listening on port ' + listener.address());
+  //console.log('Your app is listening on port ' + listener.address().port);
+});
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 var Gun = require("gun");
@@ -70,9 +79,10 @@ var listener = app.listen(process.env.PORT, function () {
 
 
 
-var port    = process.env.OPENSHIFT_NODEJS_PORT || process.env.VCAP_APP_PORT || process.env.PORT || process.argv[2] || 8080;
-var server = app.listen(port);
-var gun = Gun({ file: 'data.json', web: server });
+//var port    = process.env.OPENSHIFT_NODEJS_PORT || process.env.VCAP_APP_PORT || process.env.PORT || process.argv[2] || 8080;
+var port = 80;
+//var server = app.listen(port);
+var gun = Gun({ file: 'data.json' });
 console.log('Server started on port ' + port + ' with /gun');
 
 //require( 'gun-file' );
