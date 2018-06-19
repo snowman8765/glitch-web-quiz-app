@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 var Gun = require("gun");
 app.use(Gun.serve);
+var gun = Gun({ file:".data/data.json", web: listener });
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -72,20 +73,6 @@ app.get('/hoge/:id', function(request, response) {
 
 
 
-
-//var port    = process.env.OPENSHIFT_NODEJS_PORT || process.env.VCAP_APP_PORT || process.env.PORT || process.argv[2] || 8080;
-var port = 80;
-//var server = app.listen(port);
-var gun = Gun({ file: 'data.json', web: listener });
-console.log('Server started on port ' + port + ' with /gun');
-
-//require( 'gun-file' );
-//var gun = new Gun({
-//  'file-name' : '.data/yourData.json',  // default is 'data.json6'
-//  //'file-mode' : 666, // default is 0666
-//  'file-pretty' : true, // default, if false, will write ugly/compressed json
-//  'file-delay' : 100,  // default. control flush interval/delay default.
-//});
 
 
 var cat = {name: "Fluffy", species: "kitty"};
