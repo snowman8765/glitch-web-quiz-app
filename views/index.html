@@ -54,7 +54,14 @@
     // var Gun = require('gun'); // in NodeJS
     // var Gun = require('gun/gun'); // in React
     //var gun = Gun();
-    var gun = Gun('https://web-quiz-app.glitch.me/');
+    var gun = Gun('https://web-quiz-app.glitch.me:8080/');
+    gun.get('random/kTjLKg8Ek').put({hello: "world"});
+    var ref = gun.get('random/kTjLKg8Ek');
+    ref.on(function(data){
+      //$('body').text(JSON.stringify(data));
+      console.log("update:", data);
+    });
+    ref.get('hello').put("s");
 
     gun.get('mark').on(function(data, key){
       console.log("update:", data);

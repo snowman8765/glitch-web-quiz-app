@@ -71,6 +71,8 @@ var Gun = require( "gun" );
 var gun = Gun({
   file: 'public/data.json'
 });
+var server = require('http').createServer().listen(8080);
+var gun = Gun({web: server});
 
 
 //require( 'gun-file' );
