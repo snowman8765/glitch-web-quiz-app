@@ -30,6 +30,7 @@ const Header = () => (
       <li><Link to="/">Home</Link></li>
       <li><Link to="/memo">Memo</Link></li>
       <li><Link to="/profile">Profile</Link></li>
+      <li><Link to="/profile2/123">Profile</Link></li>
     </ul>
   </div>
 );
@@ -74,6 +75,14 @@ const Memo = ({ match }) => (
 const Profile = () => (
   <div>
     <h2>Profile</h2>
+    {console.log(arg.match.params.id)}  {/* hoge */}
+  </div>
+);
+
+const Profile2 = (arg) => (
+  <div>
+    <h2>Profile</h2>
+    {console.log(arg.match.params.id)}  {/* hoge */}
   </div>
 );
 
@@ -84,6 +93,7 @@ const Root = () => (
       <Route exact path="/" component={Home} />
       <Route path="/memo" component={Memo} />
       <Route path="/profile" component={Profile} />
+      <Route path="/profile2/:id" component={Profile2} />
     </div>
   </BrowserRouter>
 );
