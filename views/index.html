@@ -20,19 +20,22 @@
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
     
-    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
+    <script>
+        // var Gun = require('gun'); // in NodeJS
+        // var Gun = require('gun/gun'); // in React
+        //var gun = Gun();
+        var gun = Gun(location.origin + '/gun');
+        gun.get('mark2').on(function(data, key){
+          console.log("update:", data);
+        });
+    </script> 
 
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.10.3/babel.min.js"></script>
-<script type="text/babel">
-ReactDOM.render(
-  <h1>Hello world!</h1>,
-  document.getElementById('root')
-);
-</script>
+<script type="text/babel" src="/react-src.js"></script>
+    
   </head>
   <body>
     <header>
@@ -61,20 +64,6 @@ ReactDOM.render(
     <footer>
       Made with <a href="https://glitch.com">Glitch</a>!
     </footer>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
-<script>
-    
-    // 
-    // var Gun = require('gun'); // in NodeJS
-    // var Gun = require('gun/gun'); // in React
-    //var gun = Gun();
-    var gun = Gun(location.origin + '/gun');
-    gun.get('mark2').on(function(data, key){
-      console.log("update:", data);
-    });
-</script> 
     
     
     <!-- import the webpage's client-side javascript file -->
