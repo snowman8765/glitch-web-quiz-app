@@ -4,6 +4,7 @@ dependencies:
   jsx-loader: 0.13.2
   react: 16.4.1
   react-dom: 16.4.1
+  react-router: 4.3.1
   react-router-dom: 4.3.1
   sqlite3: 4.0.0
   webpack: 4.13.0
@@ -3379,6 +3380,7 @@ specifiers:
   jsx-loader: ^0.13.2
   react: ^16.4.1
   react-dom: ^16.4.1
+  react-router: ^4.3.1
   react-router-dom: ^4.3.1
   sqlite3: ^4.0.0
   webpack: ^4.13.0
