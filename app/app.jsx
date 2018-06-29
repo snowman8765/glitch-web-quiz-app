@@ -75,14 +75,13 @@ const Memo = ({ match }) => (
 const Profile = () => (
   <div>
     <h2>Profile</h2>
-    {console.log(arg.match.params.id)}  {/* hoge */}
   </div>
 );
 
 const Profile2 = (arg) => (
   <div>
     <h2>Profile</h2>
-    {console.log(arg.match.params.id)}  {/* hoge */}
+    <p>{arg.match.params.id}</p>
   </div>
 );
 
