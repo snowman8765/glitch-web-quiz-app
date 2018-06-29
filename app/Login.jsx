@@ -4,9 +4,9 @@ const withRouter = require('react-router');
 class Login extends React.Component {
 
   static propTypes = {
-    sessionId: PropTypes.string,
-    message: PropTypes.string,
-    dispatch: PropTypes.func.isRequired,
+    sessionId: React.PropTypes.string,
+    message: React.PropTypes.string,
+    dispatch: React.PropTypes.func.isRequired,
   }
 
   componentWillReceiveProps(nextProps) {

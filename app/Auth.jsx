@@ -3,7 +3,7 @@ const withRouter = require('react-router');
 
 class Auth extends React.Component {
   static PropTypes = {
-    user: PropTypes.string
+    user: React.PropTypes.string
   }
 
   componentWillMount() {
