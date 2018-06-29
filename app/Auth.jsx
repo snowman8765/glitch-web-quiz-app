@@ -1,4 +1,7 @@
-class Auth extends Component {
+const React = require('react');
+const withRouter = require('react-router');
+
+class Auth extends React.Component {
   static PropTypes = {
     user: PropTypes.string
   }

@@ -100,3 +100,9 @@ const Root = () => (
 //ReactDOM.render(<Root />, document.querySelector('#app'));
 ReactDOM.render(<Root />, document.getElementById('main'));
 
+
+const Auth = require('./Auth');
+const Login = require('./Login');
+
+
+

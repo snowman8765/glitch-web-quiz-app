@@ -1,4 +1,7 @@
-class Login extends Component {
+const React = require('react');
+const withRouter = require('react-router');
+
+class Login extends React.Component {
 
   static propTypes = {
     sessionId: PropTypes.string,
