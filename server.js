@@ -115,3 +115,4 @@ cat2.slave = mark;
  
 // partial updates merge with existing data!
 gun.get('mark2').put(mark2);
+gun.get('mark2').put(mark2);
