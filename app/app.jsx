@@ -88,8 +88,4 @@ const Root = () => (
 ReactDOM.render(<Root />, document.getElementById('main'));
 
 
-//import Auth from './Auth';
-//import Login from './Login';
-
-
 
