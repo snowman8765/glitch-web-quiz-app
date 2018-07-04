@@ -53,8 +53,8 @@ db.serialize(function(){
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-  //response.sendFile(__dirname + '/views/index.html');
-  response.sendFile(__dirname + '/sample/index.html');
+  response.sendFile(__dirname + '/views/index.html');
+  //response.sendFile(__dirname + '/sample/index.html');
 });
 
 // endpoint to get all the dreams in the database

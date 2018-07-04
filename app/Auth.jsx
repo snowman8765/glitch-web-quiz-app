@@ -1,8 +1,7 @@
-const React = require('react');
-const withRouter = require('react-router');
+import React from 'react';
+import withRouter from 'react-router';
 
 class Auth extends React.Component {
-  constructor (){}
   
   static PropTypes = {
     user: React.PropTypes.string
