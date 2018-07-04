@@ -23,7 +23,9 @@
     "react-router": "^4.3.1",
     "babel-loader": "^7.1.4",
     "babel-core": "*",
-    "babel-preset-env": "*"
+    "babel-preset-env": "*",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   },
   "engines": {
     "node": "8.x"
