@@ -66,54 +66,20 @@ app.get('/getDreams', function(request, response) {
   });
 });
 
+// 
 app.get('/hoge/:id', function(request, response) {
   db.run('INSERT INTO Dreams (dream) VALUES ("'+request.params.id+'")');
 });
 
 
-
-
-
-
-
-var cat = {name: "Fluffy", species: "kitty"};
-var mark = {boss: cat};
-cat.slave = mark;
- 
-// partial updates merge with existing data!
-gun.get('mark').put(mark);
- 
-// access the data as if it is a document.
-gun.get('mark').get('boss').get('name').val(function(data, key){
-  // `val` grabs the data once, no subscriptions.
-  console.log("Mark's boss is", data);
+// get user data by id.
+app.get('/user/:id', function(request, response) {
+  let userId = request.params.id;
+  let userData = gun.get('user').get('id').get(userId).back();
+  console.log('userData:', userData);
+  response.send(JSON.stringify(userData));
 });
- 
-// traverse a graph of circular references!
-gun.get('mark').get('boss').get('slave').once(function(data, key){
-  console.log("Mark is the slave!", data);
-});
- 
-// add both of them to a table!
-gun.get('list').set(gun.get('mark').get('boss'));
-gun.get('list').set(gun.get('mark'));
- 
-// grab each item once from the table, continuously:
-gun.get('list').map().once(function(data, key){
-  console.log("Item:", data);
-});
- 
-// live update the table!
-gun.get('list').set({type: "cucumber", goal: "scare cat"});
+
+gun.get('user').set({id:1, name:"hoge", age:11});
 
 
-
-
-
-var cat2 = {name: "Fluffy2", species: "kitty2"};
-var mark2 = {boss: cat};
-cat2.slave = mark;
- 
-// partial updates merge with existing data!
-gun.get('mark2').put(mark2);
-gun.get('mark2').put(mark2);
