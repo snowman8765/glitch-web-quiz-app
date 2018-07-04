@@ -12,15 +12,16 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "sqlite3": "^4.0.0",
-    "gun": "^0.9.9991",
+    "sqlite3": "^4.0.1",
+    "gun": "^0.9.9993",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "webpack": "^4.13.0",
+    "webpack": "^4.14.0",
     "webpack-cli": "^3.0.8",
     "jsx-loader": "^0.13.2",
     "react-router-dom": "^4.3.1",
-    "react-router": "^4.3.1"
+    "react-router": "^4.3.1",
+    "babel-loader": "^7.1.4"
   },
   "engines": {
     "node": "8.x"
