@@ -1,5 +1,5 @@
-const React = require('react');
-const withRouter = require('react-router');
+import React from 'react';
+import { withRouter } from 'react-router';
 
 class Login extends React.Component {
 

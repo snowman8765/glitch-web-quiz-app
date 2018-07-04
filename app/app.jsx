@@ -1,23 +1,8 @@
 "use strict";
 
 import React from 'react';
-const ReactDOM = require('react-dom');
-
-/* Import Components */
-const HelloWorld = require('./components/HelloWorld');
-const User = require('./User');
-
-//ReactDOM.render(<HelloWorld />, document.getElementById('main'));
-//ReactDOM.render(<User />, document.getElementById('main'));
-
-
-
-
-
-//import React from 'react';
-//import ReactDOM from 'react-dom';
-const { BrowserRouter, Route, Link } = require('react-router-dom');
-//import { BrowserRouter, Route, Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const contents = [
   '今日のうちにブログを書き終えよう。',
@@ -103,8 +88,8 @@ const Root = () => (
 ReactDOM.render(<Root />, document.getElementById('main'));
 
 
-const Auth = require('./Auth');
-const Login = require('./Login');
+import Auth from './Auth';
+import Login from './Login';
 
 
 
