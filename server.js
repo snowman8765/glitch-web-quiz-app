@@ -80,8 +80,24 @@ app.get('/user/:id', function(request, response) {
   response.send(JSON.stringify(userData));
 });
 
-gun.set(null);
+//gun.get('user').set(null);
 
-gun.get('user').set({id:1, name:"hoge", age:11});
+var u = gun.get('user').get('Email').put({id:2, name:"foo", age:22});
+console.log('user u:', u);
+//gun.get('users').set(u);
+
+var bob = gun.get('user').get('bob').put({name: "Bob"});
+var dave = gun.get('user').get('dave').put({name: "Dave"});
+dave.get('friends').set(bob);
+bob.get('friends').set(dave);
+console.log('friends:', bob);
+
+let machines = gun.get('machines');
+let machine = gun.get('machine/tesseract');
+machine.put({faces: 24, cells: 8, edges: 32});
+// let's add machine to the list of machines;
+machines.set(machine);
+// now let's remove machine from the list of machines
+//machines.unset(machine);
 
 

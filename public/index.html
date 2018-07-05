@@ -30,8 +30,20 @@
           console.log("update:", data);
         });
       
-        gun.get('user').on(function(data, key){
+        gun.get('user').map().on(function(data, key){
           console.log("user:", data);
+        });
+      
+        gun.get('machines').on(function(data, key){
+          console.log("machines:", data);
+        });
+      
+        gun.get('machine/tesseract').on(function(data, key){
+          console.log("machine/tesseract:", data);
+        });
+      
+        gun.get('friends').map().on(function(data, key){
+          console.log("all friends: data=" + data + "key=" + key);
         });
     </script> 
     
