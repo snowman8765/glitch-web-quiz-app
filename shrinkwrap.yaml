@@ -7,6 +7,7 @@ dependencies:
   express: 4.16.3
   gun: 0.9.9993
   jsx-loader: 0.13.2
+  muicss: 0.9.39
   react: 16.4.1
   react-dom: 16.4.1
   react-router: 4.3.1
@@ -2898,6 +2899,14 @@ packages:
     dev: false
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+  /muicss/0.9.39:
+    dependencies:
+      react-addons-shallow-compare: 15.6.2
+    dev: false
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0
+    resolution:
+      integrity: sha512-KOzMz4Dasf2lC/gEGyFM59mImtXcmlcAexLJdwyH9P5gF/VeBJM0lYFbVJQ9O09O5UOWq4q93okxowEl5DQyuA==
   /mute-stream/0.0.7:
     dev: false
     resolution:
@@ -3427,6 +3436,13 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==
+  /react-addons-shallow-compare/15.6.2:
+    dependencies:
+      fbjs: 0.8.17
+      object-assign: 4.1.1
+    dev: false
+    resolution:
+      integrity: sha1-GYoAuR/DdiPbZKKP0XtZa6NicC8=
   /react-dom/16.4.1:
     dependencies:
       fbjs: 0.8.17
@@ -4457,6 +4473,7 @@ specifiers:
   express: ^4.16.3
   gun: ^0.9.9993
   jsx-loader: ^0.13.2
+  muicss: ^0.9.39
   react: ^16.4.1
   react-dom: ^16.4.1
   react-router: ^4.3.1

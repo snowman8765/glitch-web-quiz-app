@@ -80,6 +80,8 @@ app.get('/user/:id', function(request, response) {
   response.send(JSON.stringify(userData));
 });
 
+gun.set(null);
+
 gun.get('user').set({id:1, name:"hoge", age:11});
 
 
